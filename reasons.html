@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons I Love Laone ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="hearts-container"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html">Home ❤</a>
+        <a href="reasons.html" class="active">Reasons Why ✨</a>
+        <a href="question.html">A Question 💍</a>
+    </nav>
+
+    <!-- Password Screen (Shown First) -->
+    <div class="card" id="passwordCard">
+        <div class="header">
+            <span class="heart-icon">🔒</span>
+            <h1>Restricted, Laone!</h1>
+        </div>
+        <p class="password-prompt">Enter the special password (hint: my birthday DDMMYY) to open this up: 😉</p>
+        
+        <div class="password-form">
+            <input type="password" id="passInput" placeholder="Enter password..." maxlength="6">
+            <button onclick="checkPassword()" class="nav-btn" style="margin-top: 15px;">Unlock ❤️</button>
+        </div>
+        <p id="errorMsg" class="error-text hidden">Oops! Incorrect password, Laone. Try again! 🙈</p>
+    </div>
+
+    <!-- Main Content Card (Hidden until password is correct) -->
+    <div class="card wide-card hidden" id="reasonsContent">
+        <div class="header">
+            <span class="heart-icon">✨</span>
+            <h1>Why I Love Laone Ralph Pholo</h1>
+            <p class="funny-subtitle">(I don’t know why I love him) 😭💖</p>
+        </div>
+
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <h3>Our Friendship First</h3>
+                <p>We were friends before anything else. Even when things tested our trust in the world, it only brought us closer and made us better friends.</p>
+            </div>
+            <div class="reason-card">
+                <h3>Through the Dark Days</h3>
+                <p>You stayed by my side during the darkest days. Nothing you say will ever change our bond because I consider you my truest companion.</p>
+            </div>
+            <div class="reason-card">
+                <h3>Matters of the Heart</h3>
+                <p>Even if you just consider me your friend while I'm looking for something more, every moment knowing you better means everything to me.</p>
+            </div>
+            <div class="reason-card">
+                <h3>The Ultimate Revenge</h3>
+                <p>Fair warning, Laone: I am still going to collect your childhood photos to embarrass you when you least expect it! 😂📸</p>
+            </div>
+        </div>
+
+        <div class="nav-links-bottom">
+            <a href="index.html" class="secondary-btn">❮ Back</a>
+            <a href="question.html" class="nav-btn">Next Step ➔</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function checkPassword() {
+            const inputVal = document.getElementById("passInput").value;
+            const correctPass = "141106"; // Your birthday code
+
+            if (inputVal === correctPass) {
+                document.getElementById("passwordCard").style.display = "none";
+                document.getElementById("reasonsContent").classList.remove("hidden");
+            } else {
+                const errorElement = document.getElementById("errorMsg");
+                errorElement.classList.remove("hidden");
+                const card = document.getElementById("passwordCard");
+                card.style.transform = "translateX(10px)";
+                setTimeout(() => card.style.transform = "translateX(-10px)", 100);
+                setTimeout(() => card.style.transform = "translateX(0)", 200);
+            }
+        }
+    </script>
+</body>
+</html>
