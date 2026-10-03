@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question For Laone 💍</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="hearts-container"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html">Home ❤️</a>
+        <a href="reasons.html">Reasons Why ✨</a>
+        <a href="question.html" class="active">A Question 💍</a>
+    </nav>
+
+    <!-- Main Content Card -->
+    <div class="card">
+        <div class="header">
+            <span class="heart-icon">💍</span>
+            <h1>Laone Ralph Pholo</h1>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="question-step" id="step1">
+            <h2>Question 1: Do you remember our best moments together? 🥰</h2>
+            <div class="btn-group">
+                <a class="nav-btn whatsapp-btn" href="https://wa.me/26778440318?text=Hey%20Ameliah!%20Regarding%20Q1:%20Yes,%20I%20remember%20our%20best%20moments!%20✨" target="_blank" onclick="nextStep(2)">Yes, I do! 💖</a>
+                <button class="secondary-btn whatsapp-btn" onclick="sendWhatsAppCustom('Hey%20Ameliah!%20Regarding%20Q1:%20My%20memory%20is%20failing%20me%20lol%20🙈')">Remind me 🙈</button>
+            </div>
+        </div>
+
+        <!-- Question 2 (Hidden Initially) -->
+        <div class="question-step hidden" id="step2">
+            <h2>Question 2: Will you survive my childhood photo revenge? 📸😂</h2>
+            <div class="btn-group">
+                <a class="nav-btn whatsapp-btn" href="https://wa.me/26778440318?text=Hey%20Ameliah!%20Regarding%20Q2:%20I%20will%20survive%20the%20childhood%20photos!%20😎" target="_blank" onclick="nextStep(3)">Challenge Accepted 😎</a>
+                <button class="secondary-btn whatsapp-btn" onclick="sendWhatsAppCustom('Hey%20Ameliah!%20Regarding%20Q2:%20Please%20have%20mercy%20with%20those%20photos%20😭')">Please have mercy 😭</button>
+            </div>
+        </div>
+
+        <!-- Question 3 / Final Proposal (Hidden Initially) -->
+        <div class="question-step hidden" id="step3">
+            <h2>Question 3: So Laone... will you be my boy? 🥺</h2>
+            <div class="btn-group">
+                <a id="yesBtn" href="https://wa.me/26778440318?text=Hey%20Ameliah!%20My%20answer%20to%20Q3%20is%20YES,%20I%20will%20be%20your%20boy!%20💍❤️️" target="_blank" onclick="finishQuiz()">Be My Boy! 💖</a>
+                <button id="noBtn" class="secondary-btn" onmouseover="moveNoButton()" onclick="sendWhatsAppCustom('Hey%20Ameliah...%20About%20your%20final%20question,%20let\'s%20just%20stay%20best%20friends%20🙈')">Just Friends 🙈</button>
+            </div>
+        </div>
+
+        <!-- Final Celebration Message -->
+        <div id="celebration" class="hidden">
+            <h2>All answers sent to WhatsApp! 🎉❤️</h2>
+            <p>Thank you for answering, Laone! I'll be waiting for your texts! 🥂✨</p>
+        </div>
+
+        <div class="nav-links-bottom" style="margin-top: 30px;">
+            <a href="reasons.html" class="secondary-btn">❮ Back</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function nextStep(stepNumber) {
+            setTimeout(() => {
+                document.querySelectorAll('.question-step').forEach(el => el.classList.add('hidden'));
+                document.getElementById('step' + stepNumber).classList.remove('hidden');
+            }, 300);
+        }
+
+        function sendWhatsAppCustom(message) {
+            window.open(`https://wa.me/26778440318?text=${message}`, '_blank');
+        }
+
+        function finishQuiz() {
+            document.querySelectorAll('.question-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById('celebration').classList.remove('hidden');
+            createConfettiHearts();
+        }
+
+        function moveNoButton() {
+            const noBtn = document.getElementById("noBtn");
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100);
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${Math.max(20, x)}px`;
+            noBtn.style.top = `${Math.max(20, y)}px`;
+        }
+    </script>
+</body>
+</html>
