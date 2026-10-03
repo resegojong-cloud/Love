@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #fff;
+    padding-top: 70px;
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 25px;
+    border-radius: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #ffb6c1;
+    font-weight: 600;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    margin-bottom: 30px;
+}
+
+.wide-card {
+    max-width: 650px;
+}
+
+.header .heart-icon {
+    font-size: 40px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    margin-top: 10px;
+    color: #ffb6c1;
+}
+
+.message-box {
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    min-height: 90px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.reason-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.reason-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.reason-card h3 {
+    font-size: 14px;
+    color: #ffb6c1;
+    margin-bottom: 6px;
+}
+
+.reason-card p {
+    font-size: 12px;
+    color: #ddd;
+    line-height: 1.4;
+}
+
+.nav-btn, .secondary-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.nav-btn {
+    background: #ff4b72;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 75, 114, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: #ff2e59;
+    transform: scale(1.05);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.nav-links-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.next-page-prompt {
+    margin-top: 20px;
+}
+
+.next-page-prompt p {
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+.question-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    min-height: 50px;
+}
+
+#yesBtn {
+    background: #ff4b72;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 75, 114, 0.4);
+    transition: transform 0.2s;
+}
+
+#yesBtn:hover {
+    transform: scale(1.05);
+}
+
+#noBtn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#celebration h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 34px;
+    color: #ffb6c1;
+    margin-bottom: 10px;
+}
+
+.password-prompt {
+    font-size: 14px;
+    color: #ddd;
+    margin: 15px 0 20px 0;
+}
+
+.password-form input {
+    width: 80%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    outline: none;
+}
+
+.password-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.error-text {
+    color: #ff6b81;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.funny-subtitle {
+    font-size: 13px;
+    color: #ffb6c1;
+    font-style: italic;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.hearts-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+    100% { transform: translateY(-105vh) scale(1.2); opacity: 0; }
+}
+
+@media(max-width: 600px) {
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+}
